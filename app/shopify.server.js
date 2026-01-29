@@ -7,7 +7,6 @@ import {
   AppDistribution,
   shopifyApp,
 } from "@shopify/shopify-app-react-router/server";
-
 import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
 
 const shopify = shopifyApp({
@@ -22,6 +21,10 @@ const shopify = shopifyApp({
 });
 
 export default shopify;
+
+/* ✅ REQUIRED EXPORTS (VERY IMPORTANT) */
+export const addDocumentResponseHeaders =
+  shopify.addDocumentResponseHeaders;
 
 export const authenticate = shopify.authenticate;
 export const unauthenticated = shopify.unauthenticated;
