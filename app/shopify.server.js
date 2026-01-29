@@ -7,7 +7,7 @@ import {
   AppDistribution,
   shopifyApp,
 } from "@shopify/shopify-app-react-router/server";
-import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
+import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
 import prisma from "./db.server";
 import express from "express";
 import bodyParser from "body-parser";
@@ -22,7 +22,7 @@ const shopify = shopifyApp({
   scopes: process.env.SCOPES?.split(","),
   appUrl: process.env.SHOPIFY_APP_URL || "",
   authPathPrefix: "/auth",
-  sessionStorage: new PrismaSessionStorage(prisma),
+sessionStorage: new SQLiteSessionStorage("database.sqlite"),
   distribution: AppDistribution.AppStore,
   future: {
     expiringOfflineAccessTokens: true,
