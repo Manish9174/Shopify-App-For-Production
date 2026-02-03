@@ -148,7 +148,7 @@ type="text"
 
       {/* ✅ Response UI (same as Shopify template) */}
       {fetcher_ms.data?.product && (
-        <s-section heading="Product Create Response  By MS">
+        <s-section heading="Product Create Response By MS">
           <s-box padding="base" borderWidth="base" borderRadius="base" background="subdued">
             
             <pre style={{ margin:0 }}>

@@ -1,0 +1,32 @@
+{% schema %}
+{
+  "name": "Announcement Bar (App)",
+  "target": "body",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Welcome to our store 🎉"
+    }
+  ]
+}
+{% endschema %}
+
+{% if settings.announcement_text != blank %}
+  <div
+    style="
+      width: 100%;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    "
+  >
+    {{ settings.announcement_text }}
+  </div>
+{% endif %}
